@@ -1,6 +1,7 @@
 import java.io.*;
 // import java.util.*;
 
+// This question is similar to Leetcode 46. Permutations
 public class PrintAllPermutations {
 
   public static void permutations(int[] boxes, int ci, int ti){
