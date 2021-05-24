@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+class RemoveNthFromEndList {
     public static Scanner scn = new Scanner(System.in);
 
     public static class ListNode {
@@ -28,24 +28,27 @@ class Main {
             fast = fast.next;
             
             // prevent from null pointer exception when n > List size
+            // Write code
             if(fast.next == null){
-                if(n == 1) return head.next;
-                else return null;
+                if(n == 2) return head.next;
             }
         }
         
         while(fast != null){
+            fast = fast.next;
             slow = slow.next;
             prev = prev.next;
-            fast = fast.next;
         }
         
         prev.next = slow.next;
-        
         return dummy.next;
     }
 
     public static void printList(ListNode node) {
+        if(node == null || node.next == null){
+            System.out.print("List is empty or you have entered n greater than List size");
+        }
+
         while (node != null) {
             System.out.print(node.val + " ");
             node = node.next;
@@ -68,7 +71,7 @@ class Main {
         ListNode h1 = createList(n);
 
         int m = scn.nextInt();
-        removeNthFromEnd(h1, m);
-        printList(h1);
+        ListNode nHead = removeNthFromEnd(h1, m);
+        printList(nHead);
     }
 }
