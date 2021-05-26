@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class CombinationSmartCalls {
 // cb -> current box
