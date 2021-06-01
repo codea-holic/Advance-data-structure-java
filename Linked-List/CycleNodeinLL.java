@@ -1,7 +1,7 @@
 import java.util.*;
 
-// Solution of Problem 141 in Leetcode.
-public class IsCyclePresentInLinkedList {
+// Problem No. 142 of Leetcode
+public class CycleNodeinLL {
     public static Scanner scn = new Scanner(System.in);
 
     public static class ListNode {
@@ -13,22 +13,28 @@ public class IsCyclePresentInLinkedList {
         }
     }
 
-    public static boolean isCyclePresentInLL(ListNode head) {
-        if(head == null || head.next == null) return false;
+    public static ListNode cycleNode(ListNode head) {
+        if(head == null || head.next == null) return null;
         
         ListNode slow = head;
         ListNode fast = head;
+        
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
             
-            if(slow == fast){
-                return true;
-            }
-            
+            if(slow == fast) break;
         }
         
-        return false;
+        if(slow != fast) return null;
+        slow = head;
+        
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        
+        return fast; // fast || slow
     }
 
     public static ListNode takeInput() {
@@ -52,6 +58,7 @@ public class IsCyclePresentInLinkedList {
 
     public static void main(String[] args) {
         ListNode head = takeInput();
-        System.out.println(isCyclePresentInLL(head));
+        ListNode ans = cycleNode(head);
+        System.out.println(ans!=null?ans.val:-1);
     }
 }
