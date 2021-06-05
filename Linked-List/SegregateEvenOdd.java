@@ -1,3 +1,4 @@
+package OpenSourse;
 import java.util.*;
 
 class segregateEvenOdd {
@@ -9,31 +10,56 @@ class segregateEvenOdd {
             this.val = val;
         }
     }
-    
-    public static void swap(ListNode node1, ListNode node2){
-        int temp = node1.val;
-        node1.val = node2.val;
-        node2.val = temp;
-    }
+ 
 
     public static ListNode segregateEvenOdd(ListNode head) {
-        if(head == null || head.next == null) return head;
-        
-        ListNode even = head;
-        ListNode odd = head;
-        
-        
-        // Below code is segregate 0 to e even number and e to odd are odd
-        while(odd != null){
-            if(odd.val % 2 == 0){
-                swap(odd, even);
-                odd = odd.next;
-                even = even.next;
-            } else{
-                odd = odd.next;
+    	ListNode odd = null, oddTail = null;
+        ListNode even = null, evenTail = null;
+        ListNode curr = head;
+ 
+        while (curr != null)
+        {
+            if ((curr.val & 1) != 0)        // current node is odd
+            {
+                // handle head for the first odd node
+                if (odd == null) {
+                    odd = oddTail = curr;
+                }
+                else {
+                    oddTail.next = curr;
+                    oddTail = oddTail.next;
+                }
             }
+            else    // current node is even
+            {
+                // handle head for the first even node
+                if (even == null) {
+                    even = evenTail = curr;
+                }
+                else {
+                    evenTail.next = curr;
+                    evenTail = curr;
+                }
+            }
+            curr = curr.next;
         }
-        
+ 
+        // if the list contains at least one even node
+        if (even != null)
+        {
+            head = even;
+            evenTail.next = odd;
+        }
+        // special case – list contains all odd nodes
+        else {
+            head = odd;
+        }
+ 
+        // null to terminate the list; otherwise, it will go into an infinite loop
+        if (oddTail != null) {
+            oddTail.next = null;
+        }
+ 
         return head;
     }
 
@@ -52,5 +78,6 @@ class segregateEvenOdd {
             System.out.print(head.val + " ");
             head = head.next;
         }
+        scn.close();
     }
-}
+} 
