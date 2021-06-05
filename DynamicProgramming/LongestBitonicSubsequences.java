@@ -31,7 +31,7 @@ public class LongestBitonicSubsequences {
         int[] lds_dp = new int[n]; // longest decresing sequence
         for (int i = lds_dp.length - 1; i >= 0; i--) {
             int max = 0;
-            for (int j = i; j < lds_dp.length; j++) {
+            for (int j = i + 1; j < lds_dp.length; j++) {
                 if (arr[i] >= arr[j]) {
                     if (lds_dp[j] > max)
                         max = lds_dp[j];

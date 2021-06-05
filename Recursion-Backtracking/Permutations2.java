@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+/* In this method keep boxes on levels instead of keeping items on level
+  for more info you can refer Permutation1 code */
 public class Permutations2 {
     // cb ->  current box
     // tb -> total box
@@ -9,13 +11,6 @@ public class Permutations2 {
     // ti -> total items
     // asf -> answer so far
   public static void permutations(int cb, int tb, int[] items, int ssf, int ti, String asf){
-    // write your code here
-    // System.out.println("cb = " + cb);
-    // System.out.println("tb = " + tb);
-    // System.out.println("ssf = " + ssf);
-    // System.out.println("ti = " + ti);
-    // System.out.println("asf = " + asf);
-    // System.out.println();
     if(cb > tb){
         if(ssf == ti){
             System.out.println(asf);
