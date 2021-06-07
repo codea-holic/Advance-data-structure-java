@@ -1,9 +1,8 @@
 import java.io.*;
-import java.util.*;
 
 /* In this method items are on level and boxes are options that
  we have to explore inside the loop */
-public class Main {
+public class Permutation1 {
 
     // ci -> current item
     // ti -> total item

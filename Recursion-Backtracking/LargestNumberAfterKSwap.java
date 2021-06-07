@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 /* You have to find the largest number after K swap (of digits)
@@ -50,6 +49,7 @@ public class LargestNumberAfterKSwap {
 		 max = str;
 		findMaximum(str, k);
 		System.out.println(max);
+		scn.close();
 	}
 
 }

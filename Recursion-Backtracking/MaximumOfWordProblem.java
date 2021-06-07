@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class MaximumOfWordProblem {
@@ -53,6 +52,7 @@ public class MaximumOfWordProblem {
     for (int i = 0; i < score.length; i++) {
       score[i] = scn.nextInt();
     }
+    scn.close();
     if (words == null || words.length == 0 || letters == null || letters.length == 0 || score == null
         || score.length == 0) {
       System.out.println(0);
@@ -64,6 +64,5 @@ public class MaximumOfWordProblem {
     }
     solution(words, farr, score, 0, 0);
     System.out.println(max);
-
   }
 }

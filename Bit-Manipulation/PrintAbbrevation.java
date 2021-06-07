@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 
@@ -40,5 +39,6 @@ public class PrintAbbrevation {
         Scanner scn = new Scanner(System.in);
         String str = scn.nextLine();
         solve(str);
+        scn.close();
     }
 }
