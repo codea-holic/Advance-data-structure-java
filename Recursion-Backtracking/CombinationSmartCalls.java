@@ -12,8 +12,8 @@ public class CombinationSmartCalls {
 		System.out.println(asf);
 		return;
 	}
-	// We can't put these check above the first one bcoz at cb > tb then it 
-	// return that instant and we will not able to check for last box
+	// We can't put these check (cb > tb) above the first check(ssf == ts) bcoz  
+	// it return  at that instant and we will not able to check for last box...
     if(cb > tb){
         return;
     }

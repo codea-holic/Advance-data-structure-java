@@ -1,5 +1,6 @@
 package DynamicProgramming;
 
+// Question:- Count the Minimum square number required to represent the number.
 import java.util.*;
 
 public class MinSquares {
