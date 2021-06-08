@@ -37,15 +37,23 @@ public class WordSelection3 {
       }
       
       char ch = ustr.charAt(idx);
-      
-      for(int i = fmap.get(ch); i >= 0; i--){
-          String str = "";
-          for(int j = 0; j < i; j++){
-              str += ch;
-          }
+    //   for(int i = fmap.get(ch); i >= 0; i--){
+    //       String str = "";
+    //       for(int j = 0; j < i; j++){
+    //           str += ch;
+    //       }
           
-          wordsSelection(ustr, fmap, idx + 1, ssf + i, ts, asf + str);
+    //       wordsSelection(ustr, fmap, idx + 1, ssf + i, ts, asf + str);
+    //   }
+
+    if (fmap.get(ch) > 0) {
+        fmap.put(ch, fmap.get(ch) - 1);
+        wordsSelection(ustr, fmap, idx, ssf + 1, ts, asf + ch);
+        fmap.put(ch, fmap.get(ch) + 1);
       }
+      
+      wordsSelection(ustr, fmap, idx + 1, ssf, ts, asf);
+      
   }
   
 }
