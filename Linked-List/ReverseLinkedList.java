@@ -12,26 +12,29 @@ class ReverseLinkedList {
     }
 
     public static ListNode reverse(ListNode head) {
-        if(head == null){
-            return null;
-        } else if(head.next == null){
-            return head;
-        } else{
-            ListNode prev = null;
-            ListNode curr = head;
-            ListNode forw = null;
-            
-            while(curr != null){
-                forw = curr.next;
-                curr.next = prev;
-                prev = curr;
-                curr = forw;
-            }
-            
-            return prev;
-        }
-        
-    }
+    	Stack<ListNode > stk = new Stack<ListNode> (); 
+    	  
+        // Push the elements of list to stack 
+        ListNode ptr = head; 
+        while (ptr.next != null) 
+        { 
+            stk.push(ptr); 
+            ptr = ptr.next; 
+        } 
+      
+        // Pop from stack and replace 
+        // current nodes value' 
+        head = ptr; 
+        while (!stk.isEmpty())
+        { 
+            ptr.next = stk.peek(); 
+            ptr = ptr.next; 
+            stk.pop(); 
+        } 
+        ptr.next = null; 
+          
+        return head; 
+    } 
 
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
