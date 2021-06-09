@@ -52,8 +52,6 @@ public class WordSelection3 {
         fmap.put(ch, fmap.get(ch) + 1);
       }
       
-      wordsSelection(ustr, fmap, idx + 1, ssf, ts, asf);
-      
-  }
-  
+      wordsSelection(ustr, fmap, idx + 1, ssf, ts, asf);  
+  } 
 }

@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 /* In this method keep boxes on levels instead of keeping items on level
   for more info you can refer Permutation1 code */
