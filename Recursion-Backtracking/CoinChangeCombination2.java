@@ -17,8 +17,6 @@ public class CoinChangeCombination2 {
             coinChange(i, coins, amtsf + coins[i], tamt, asf + coins[i] + "-");
         }
         
-        // no call
-        coinChange(idx + 1, coins, amtsf, tamt, asf);
     }
 
     public static void main(String[] args) throws Exception {
